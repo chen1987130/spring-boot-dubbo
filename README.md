@@ -1,3 +1,5 @@
+
+----------------spring cloud (eureka + 配置服务器 + gateway)+ dubbo --------------- </br>
 1.安装zookeeper,端口：2181 </br>
 2.安装rabbitmq,端口：5672,用户名：guest,密码：guest </br>
 3.启动zookeeper </br>
