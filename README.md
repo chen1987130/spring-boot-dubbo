@@ -31,7 +31,7 @@ http://10.211.240.120:9085/spring-boot-dubbo-app/hello/properties
 #查看动态配置
 http://10.211.240.120:9080/spring-boot-dubbo-app/dev
 {spring-boot-dubbo-app} 项目
-{dev} 环境
+{dev} 环境 
 
 #查看路由情况
 http://10.211.240.120:9085/routes
