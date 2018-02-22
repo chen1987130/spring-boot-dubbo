@@ -24,25 +24,25 @@ rabbitmq-server </br>
 http://localhost:8761/ </br>
 </br>
 #刷新配置 </br>
-(POST) http://10.211.240.120:9080/bus/refresh?destination=spring-boot-dubbo-app </br>
+(POST) http://localhost:9080/bus/refresh?destination=spring-boot-dubbo-app </br>
 </br>
 #测试地址 </br>
-http://10.211.240.120:9085/spring-boot-dubbo-app/hello/add </br>
-http://10.211.240.120:9085/spring-boot-dubbo-app/hello/properties </br>
+http://localhost:9085/spring-boot-dubbo-app/hello/add </br>
+http://localhost:9085/spring-boot-dubbo-app/hello/properties </br>
 </br>
 #查看动态配置 </br>
-http://10.211.240.120:9080/spring-boot-dubbo-app/dev </br>
+http://localhost:9080/spring-boot-dubbo-app/dev </br>
 {spring-boot-dubbo-app} 项目 </br>
 {dev} 环境 </br>
 </br>
 #查看路由情况 </br>
-http://10.211.240.120:9085/routes </br>
+http://localhost:9085/routes </br>
 </br>
 #健康检查 </br>
-http://10.211.240.120:9085/health </br>
+http://localhost:9085/health </br>
 </br>
 #动态监控 </br>
-http://10.211.240.120:9085/hystrix.stream </br>
+http://localhost:9085/hystrix.stream </br>
 </br>
 </br>
 其他项目 </br>
