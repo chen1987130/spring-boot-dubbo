@@ -1,10 +1,14 @@
 1.安装zookeeper,端口：2181
 2.安装rabbitmq,端口：5672,用户名：guest,密码：guest
 3.启动zookeeper
+cd D:\work\zookeeper-3.4.8\bin
+d:
+zkServer.cmd
+4.启动Redis
 cd D:\work\Redis-x64-3.0.504
 d:
 redis-server.exe
-4.启动rabbitmq
+5.启动rabbitmq
 cd D:\work\RabbitMQ\rabbitmq_server-3.6.12\sbin
 d:
 rabbitmq-server

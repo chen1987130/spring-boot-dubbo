@@ -11,7 +11,7 @@
 
 	<dubbo:consumer check="false" timeout="1000" mock="return null" default="true" />
 
-	<dubbo:reference id="helloApi" interface="org.spring.boot.dubbo.api.HelloApi" />
-	<dubbo:reference id="customApi" interface="org.spring.boot.dubbo.api.CustomApi" />
+	<dubbo:reference id="helloApi" interface="com.feiniu.api.HelloApi" />
+	<dubbo:reference id="customApi" interface="com.feiniu.api.CustomApi" />
 
 </beans>

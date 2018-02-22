@@ -9,7 +9,7 @@
 
 	<dubbo:protocol name="dubbo" port="${dubbo.port}" />
 
-	<dubbo:service interface="org.spring.boot.dubbo.api.HelloApi" ref="helloApi" />
+	<dubbo:service interface="com.feiniu.api.HelloApi" ref="helloApi" />
 
 
 </beans>
