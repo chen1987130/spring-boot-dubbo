@@ -1,0 +1,13 @@
+1.安装tomcat8
+2.安装solr6
+3.通过tomcat启动solr
+4.修改配置managed-schema,变动如下
+  <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
+  <field name="song" type="string" indexed="true" stored="true" required="true" multiValued="false" />  
+  <field name="singer" type="string" indexed="true" stored="true" required="false" multiValued="false" />  
+  <field name="lyric" type="text_general" indexed="true" stored="true" required="false" multiValued="false" />  
+  <field name="remark" type="text_general" indexed="true" stored="false" multiValued="true" />  
+
+  <copyField source="song" dest="remark" />  
+  <copyField source="singer" dest="remark" />  
+  <copyField source="lyric" dest="remark" />

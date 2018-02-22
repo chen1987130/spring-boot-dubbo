@@ -1,0 +1,67 @@
+{
+    "code": 0,
+    "data": {
+        "categories": [
+            {
+                "cate_name": "水果蔬菜",
+                "cate_id": 1,
+                "img_url": "https://img.beta1.fn/C/item/2013/1107/201311C070001887/0_1_640x640_q70.jpg.webp"
+            },
+            {
+                "cate_name": "海鲜水产",
+                "cate_id": 2,
+                "img_url": "https://img.beta1.fn/C/item/2013/1107/201311C070001887/0_1_640x640_q70.jpg.webp"
+            },
+            {
+                "cate_name": "肉禽单品",
+                "cate_id": 3,
+                "img_url": "https://img.beta1.fn/C/item/2013/1107/201311C070001887/0_1_640x640_q70.jpg.webp"
+            },
+            {
+                "cate_name": "面点素食",
+                "cate_id": 4,
+                "img_url": "https://img.beta1.fn/C/item/2013/1107/201311C070001887/0_1_640x640_q70.jpg.webp"
+            },
+            {
+                "cate_name": "精致烘培",
+                "cate_id": 5,
+                "img_url": "https://img.beta1.fn/C/item/2013/1107/201311C070001887/0_1_640x640_q70.jpg.webp"
+            },
+            {
+                "cate_name": "酒水饮料",
+                "cate_id": 6,
+                "img_url": "https://img.beta1.fn/C/item/2013/1107/201311C070001887/0_1_640x640_q70.jpg.webp"
+            },
+            {
+                "cate_name": "休闲食品",
+                "cate_id": 7,
+                "img_url": "https://img.beta1.fn/C/item/2013/1107/201311C070001887/0_1_640x640_q70.jpg.webp"
+            },
+            {
+                "cate_name": "粮油干活",
+                "cate_id": 8,
+                "img_url": "https://img.beta1.fn/C/item/2013/1107/201311C070001887/0_1_640x640_q70.jpg.webp"
+            },
+            {
+                "cate_name": "母婴中心",
+                "cate_id": 9,
+                "img_url": "https://img.beta1.fn/C/item/2013/1107/201311C070001887/0_1_640x640_q70.jpg.webp"
+            },
+            {
+                "cate_name": "个护保健",
+                "cate_id": 10,
+                "img_url": "https://img.beta1.fn/C/item/2013/1107/201311C070001887/0_1_640x640_q70.jpg.webp"
+            }
+        ]
+    },
+    "msg": "success",
+    "status": true,
+    "user_info": {
+        "discount_rate": "0.0",
+        "rt_no": "1999",
+        "st_in_no": "Z121018",
+        "status": 1021,
+        "sup_no": "B0023",
+        "u_type": "0"
+    }
+}

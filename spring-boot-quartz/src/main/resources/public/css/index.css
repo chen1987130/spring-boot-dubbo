@@ -1,0 +1,26 @@
+html {
+	overflow: hidden;
+}
+
+.lefttree .sidebar-shortcuts-large button.btn {
+	font-size: 16px;
+	width: 50px;
+}
+
+.lefttree button.btn {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+.lefttree {
+	float: left;
+	border: 1px solid #ccc;
+	border-width: 0 1px 0 0;
+	background-color: #f2f2f2;
+}
+
+.rframe {
+	overflow-x: auto;
+	overflow-y: auto;
+}

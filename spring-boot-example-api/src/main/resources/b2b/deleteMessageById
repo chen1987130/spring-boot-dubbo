@@ -1,0 +1,14 @@
+{
+    "code": 0,
+    "data": {},
+    "msg": "success",
+    "status": true,
+    "user_info": {
+        "discount_rate": "0.0",
+        "rt_no": "1999",
+        "st_in_no": "Z121018",
+        "status": 1021,
+        "sup_no": "B0023",
+        "u_type": "0"
+    }
+}

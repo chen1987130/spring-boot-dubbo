@@ -1,0 +1,47 @@
+mongodb安装
+
+1.下载Enterprise Server msi版本mongodb
+https://www.mongodb.com/download-center#enterprise
+
+2.创建data、log目录
+
+3.mongodb根目录创建mongo.conf
+dbpath=D:\work\mongodb-data\db #数据库路径  
+logpath=D:\work\mongodb-data\log\mongo.log #日志输出文件路径  
+logappend=true #错误日志采用追加模式  
+journal=true #启用日志文件，默认启用  
+quiet=true #这个选项可以过滤掉一些无用的日志信息，若需要调试使用请设置为false  
+port=27017 #端口号 默认为27017  
+
+4.通过mongo.conf,启动mongodb,并创建windows服务
+mongod --config "D:\work\MongoDB\Server\3.4\mongo.conf"  --install --serviceName "MongoDB"
+net start MongoDB
+
+5.开启授权模式
+mongod --config "D:\work\MongoDB\Server\3.4\mongo.conf" --auth --install --serviceName "MongoDB"
+net start MongoDB
+
+6.运行客户端(授权模式下)
+cd D:\work\MongoDB\Server\3.4\bin
+mongo
+
+7.创建数据库hello
+use hello
+
+8.创建用户
+db.createUser(
+  {
+    user: "cs",
+    pwd: "123456",
+    roles: ["readWrite"]
+  }
+)
+
+9.远程连接数据库
+mongo -u cs -p 123456 127.0.1.1:27017/hello
+
+1.启动kafka生产端
+kafka-console-producer.bat --broker-list localhost:9092 --topic hello_topic
+
+2.启动kafka消费端
+kafka-console-consumer.bat --zookeeper localhost:2181 --topic hello_topic

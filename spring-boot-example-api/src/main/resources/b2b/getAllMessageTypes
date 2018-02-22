@@ -1,0 +1,57 @@
+{
+  "code": 0,
+  "data": {
+    "list": [
+      {
+        "type": "1",
+        "title": "商品通知",
+        "time": "05月19号 16:00",
+        "sub_title": "您关注的小金龙",
+        "unread_count": 21,
+        "icon": "https://st01.beta1.fn/b2b/assets/images/merchant/changmaiqingdan_2x.png"
+      },
+      {
+        "type": "2",
+        "title": "订单通知",
+        "time": "05月19号 16:00",
+        "sub_title": "您的订单已出货",
+        "unread_count": 120,
+        "icon": "https://st01.beta1.fn/b2b/assets/images/merchant/changmaiqingdan_2x.png"
+      },
+      {
+        "type": "3",
+        "title": "优惠推荐",
+        "time": "05月19号 16:00",
+        "sub_title": "酒水奶饮特价啦",
+        "unread_count": 3,
+        "icon": "https://st01.beta1.fn/b2b/assets/images/merchant/changmaiqingdan_2x.png"
+      },
+      {
+        "type": "4",
+        "title": "我的资产",
+        "time": "05月19号 16:00",
+        "sub_title": "您购物获得了56积分",
+        "unread_count": 0,
+        "icon": "https://st01.beta1.fn/b2b/assets/images/merchant/changmaiqingdan_2x.png"
+      },
+      {
+        "type": "5",
+        "title": "系统通知",
+        "time": "05月19号 16:00",
+        "sub_title": "注册审核通过",
+        "unread_count": 0,
+        "icon": "https://st01.beta1.fn/b2b/assets/images/merchant/changmaiqingdan_2x.png"
+      }
+    ]
+  },
+  "msg": "success",
+  "status": true,
+  "user_info": {
+    "discount_rate": "0.0",
+    "rt_no": "1999",
+    "st_in_no": "Z121018",
+    "status": 1021,
+    "sup_no": "B0023",
+    "u_type": "0"
+  }
+}

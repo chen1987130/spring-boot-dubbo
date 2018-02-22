@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.feiniu.quartz.page.mapper.QrtzLogMapper">
+
+	<resultMap id="BaseResultMap" type="com.feiniu.quartz.page.model.QrtzLog">
+		<id column="ID" property="id" jdbcType="INTEGER" />
+		<result column="LOG_TASK" property="logTask" jdbcType="VARCHAR" />
+		<result column="LOG_TIME" property="logTime" jdbcType="TIMESTAMP" />
+		<result column="LOG_CONTENT" property="logContent" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		ID,LOG_TASK,LOG_TIME,LOG_CONTENT
+	</sql>
+
+	<sql id="Alias_Column_List">
+		t.ID,t.LOG_TASK,t.LOG_TIME,t.LOG_CONTENT
+	</sql>
+
+	<sql id="Base_Condition">
+		<where>
+		   <if test="logTask != null">and t.LOG_TASK = #{logTask,jdbcType=VARCHAR}</if>
+		   <if test="logContent != null">and t.LOG_CONTENT = #{logContent,jdbcType=VARCHAR}</if>
+		   <!-- 自定义 -->
+		</where>
+	</sql>
+
+	<!-- 通过复合条件查询 -->
+	<select id="select" resultMap="BaseResultMap" parameterType="java.util.HashMap">
+		select
+		<include refid="Alias_Column_List" />
+		from qrtz_log t
+		<include refid="Base_Condition" />
+	</select>
+
+	<!-- 统计 -->
+	<select id="count" resultType="java.lang.Integer" parameterType="java.util.HashMap">
+		select count(0)
+		from qrtz_log t
+		<include refid="Base_Condition" />
+	</select>
+
+	<!-- 通过主键查询对象 -->
+	<select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from qrtz_log
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<!-- 通过主键删除对象 -->
+	<delete id="deleteById" parameterType="java.lang.Integer">
+		delete from qrtz_log
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<!-- 新增对象(所有字段) -->
+	<insert id="insertAllField" parameterType="com.feiniu.quartz.page.model.QrtzLog">
+		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID() AS ID
+		</selectKey>
+
+		insert into qrtz_log(
+			<include refid="Base_Column_List" />
+		)
+		values(
+			#{id,jdbcType=INTEGER},
+			#{logTask,jdbcType=VARCHAR},
+			#{logTime,jdbcType=TIMESTAMP},
+			#{logContent,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<!-- 新增对象(部分字段) -->
+	<insert id="insert" parameterType="com.feiniu.quartz.page.model.QrtzLog">
+		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID() AS ID
+		</selectKey>
+
+		insert into qrtz_log
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">ID,</if>
+			<if test="logTask != null">LOG_TASK,</if>
+			<if test="logTime != null">LOG_TIME,</if>
+			<if test="logContent != null">LOG_CONTENT,</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">ID,</if>
+			<if test="logTask != null">#{logTask,jdbcType=VARCHAR},</if>
+			<if test="logTime != null">#{logTime,jdbcType=TIMESTAMP},</if>
+			<if test="logContent != null">#{logContent,jdbcType=VARCHAR},</if>
+		</trim>
+	</insert>
+
+	<!-- 修改对象 (部分字段)-->
+	<update id="update" parameterType="com.feiniu.quartz.page.model.QrtzLog">
+		update qrtz_log
+		<set>
+			<if test="logTask != null">LOG_TASK = #{logTask,jdbcType=VARCHAR},</if>
+			<if test="logTime != null">LOG_TIME = #{logTime,jdbcType=TIMESTAMP},</if>
+			<if test="logContent != null">LOG_CONTENT = #{logContent,jdbcType=VARCHAR},</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<!-- 修改对象(所有字段) -->
+	<update id="updateAllField" parameterType="com.feiniu.quartz.page.model.QrtzLog">
+		update qrtz_log
+		set
+			LOG_TASK = #{logTask,jdbcType=VARCHAR},
+			LOG_TIME = #{logTime,jdbcType=TIMESTAMP},
+			LOG_CONTENT = #{logContent,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<!-- 批量插入(所有字段) -->
+	<insert id="batchInsert" parameterType="java.util.List">
+		insert into qrtz_log(
+			<include refid="Base_Column_List" />
+		)
+		values
+		<foreach collection="list" index="index" item="item" separator=",">
+		(
+			#{item.id}
+			<choose><when test="item.logTask != null">,#{item.logTask}</when><otherwise>,default</otherwise></choose>
+			<choose><when test="item.logTime != null">,#{item.logTime}</when><otherwise>,default</otherwise></choose>
+			<choose><when test="item.logContent != null">,#{item.logContent}</when><otherwise>,default</otherwise></choose>
+		)
+		</foreach>
+	</insert>
+
+	<!-- 批量插入或更新(所有字段) -->
+	<update id="batchInsertOrUpdate" parameterType="java.util.List">
+		insert into qrtz_log(
+			<include refid="Base_Column_List" />
+		)
+		values
+		<foreach collection="list" index="index" item="item" separator=",">
+		(
+			#{item.id}
+			<choose><when test="item.logTask != null">,#{item.logTask}</when><otherwise>,default</otherwise></choose>
+			<choose><when test="item.logTime != null">,#{item.logTime}</when><otherwise>,default</otherwise></choose>
+			<choose><when test="item.logContent != null">,#{item.logContent}</when><otherwise>,default</otherwise></choose>
+		)
+		</foreach>
+		on duplicate key update LOG_TASK = values(LOG_TASK), LOG_TIME = values(LOG_TIME), LOG_CONTENT = values(LOG_CONTENT)
+	</update>
+
+	<!-- 批量删除 -->
+	<delete id="batchDelete" parameterType="java.util.List">
+		delete from qrtz_log where ID in 
+		<foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+
+	<!-- 自定义 -->
+	<delete id="deleteAll">
+		delete from qrtz_log
+	</delete>
+	
+</mapper>

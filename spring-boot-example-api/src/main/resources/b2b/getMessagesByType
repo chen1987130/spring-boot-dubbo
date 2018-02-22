@@ -1,0 +1,127 @@
+{
+    "code": 0,
+    "data": {
+        "list": [
+            {
+                "model_type": "4",
+                "content": {
+                    "id": 111,
+                    "sub_type": 1,
+                    "time": "2016年3月28日 8:40",
+                    "title": "积分获取提醒",
+                    "sub_title": "您购物获得了【交易序列号获得积分】积分，当前可用积分【当前积分】！积分当钱花，去看看吧！",
+                    "imgurl": "https://img.beta1.fn/pic/5ca7133c96c025568566/knqnTT5nFzCghdZduT/1ioRpyjaWat9LG/Csq5ZloNPmCAUR0rAATHztIrw-A389_org_q70s750.png.webp"
+                }
+            },
+            {
+                "model_type": "4",
+                "content": {
+                    "id": 111,
+                    "sub_type": 1,
+                    "time": "2016年3月28日 8:40",
+                    "title": "积分获取提醒",
+                    "sub_title": "您购物获得了【交易序列号获得积分】积分，当前可用积分【当前积分】！积分当钱花，去看看吧！"
+                }
+            },
+            {
+                "model_type": "4",
+                "content": {
+                    "id": 111,
+                    "sub_type": 1,
+                    "time": "2016年3月28日 8:40",
+                    "title": "积分获取提醒",
+                    "sub_title": "您购物获得了【交易序列号获得积分】积分，当前可用积分【当前积分】！积分当钱花，去看看吧！",
+                    "imgurl": "https://img.beta1.fn/pic/5ca7133c96c025568566/knqnTT5nFzCghdZduT/1ioRpyjaWat9LG/Csq5ZloNPmCAUR0rAATHztIrw-A389_org_q70s750.png.webp",
+                    "activity_status": "0"
+                }
+            },
+            {
+                "model_type": "2",
+                "content": {
+                    "id": 111,
+                    "sub_type": 1,
+                    "time": "2016年3月28日8: 40",
+                    "title": "订单出货提醒",
+                    "sub_title": "您的【交易序列号】订单已出货，e路发优先为您配送。请注意查收！",
+                    "imgurl": "https://img.beta1.fn/C/item/2013/1101/201311C010000932/0_1_640x640_q70.jpg.webp"
+                }
+            },
+            {
+                "model_type": "2",
+                "content": {
+                    "id": 111,
+                    "sub_type": 1,
+                    "time": "2016年3月28日8: 40",
+                    "title": "订单出货提醒",
+                    "sub_title": "您的【交易序列号】订单已出货，e路发优先为您配送。请注意查收！"
+                }
+            },
+            {
+                "model_type": "1",
+                "content": {
+                    "id": 111,
+                    "sub_type": 1,
+                    "time": "2016年3月28日8: 40",
+                    "title": "您关注的商品已到货，快去下单吧",
+                    "gname": "皇冠丹麦曲奇饼干(丹麦生产)",
+                    "price": "95.7",
+                    "spec": "908克/罐",
+                    "imgurl": "https://img.beta1.fn/C/item/2013/1101/201311C010000932/0_1_640x640_q70.jpg.webp"
+                }
+            },
+            {
+                "model_type": "1",
+                "content": {
+                    "id": 111,
+                    "sub_type": 1,
+                    "time": "2016年3月28日8: 40",
+                    "title": "您关注的商品已到货，快去下单吧",
+                    "gname": "皇冠丹麦曲奇饼干皇冠丹麦曲奇饼干皇冠丹麦曲奇饼干",
+                    "price": "95.7",
+                    "spec": "908克/罐"
+                }
+            },
+            {
+                "model_type": "4",
+                "content": {
+                    "id": 111,
+                    "sub_type": 1,
+                    "time": "2016年3月28日8: 40",
+                    "title": "积分获取提醒",
+                    "sub_title": "您购物获得了【交易序列号获得积分】积分，当前可用积分【当前积分】！积分当钱花，去看看吧！"
+                }
+            },
+            {
+                "model_type": "4",
+                "content": {
+                    "id": 111,
+                    "sub_type": 1,
+                    "time": "2016年3月28日8: 40",
+                    "title": "积分获取提醒",
+                    "sub_title": "您购物获得了【交易序列号获得积分】积分，当前可用积分【当前积分】！积分当钱花，去看看吧！"
+                }
+            },
+            {
+                "model_type": "4",
+                "content": {
+                    "id": 111,
+                    "sub_type": 1,
+                    "time": "2016年3月28日8: 40",
+                    "title": "积分获取提醒",
+                    "sub_title": "您购物获得了【交易序列号获得积分】积分，当前可用积分【当前积分】！积分当钱花，去看看吧！"
+                }
+            }
+        ],
+        "total": 20
+    },
+    "msg": "success",
+    "status": true,
+    "user_info": {
+        "discount_rate": "0.0",
+        "rt_no": "1999",
+        "st_in_no": "Z121018",
+        "status": 1021,
+        "sup_no": "B0023",
+        "u_type": "0"
+    }
+}

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.feiniu.mybatis.mapper.CountryMapper">
+
+	<resultMap id="BaseResultMap" type="com.feiniu.mybatis.model.Country">
+		<id column="Id" property="id" jdbcType="INTEGER" />
+		<result column="countryname" property="countryname" jdbcType="VARCHAR" />
+		<result column="countrycode" property="countrycode" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		Id,countryname,countrycode
+	</sql>
+
+	<sql id="Alias_Column_List">
+		t.Id,t.countryname,t.countrycode
+	</sql>
+
+	<sql id="Base_Condition">
+		<where>
+		   <if test="countryname != null">and t.countryname = #{countryname,jdbcType=VARCHAR}</if>
+		   <if test="countrycode != null">and t.countrycode = #{countrycode,jdbcType=VARCHAR}</if>
+		   <!-- 自定义 -->
+		</where>
+	</sql>
+
+	<!-- 通过复合条件查询 -->
+	<select id="select" resultMap="BaseResultMap" parameterType="java.util.HashMap">
+		select
+		<include refid="Alias_Column_List" />
+		from country t
+		<include refid="Base_Condition" />
+	</select>
+
+	<!-- 统计 -->
+	<select id="count" resultType="java.lang.Integer" parameterType="java.util.HashMap">
+		select count(0)
+		from country t
+		<include refid="Base_Condition" />
+	</select>
+
+	<!-- 通过主键查询对象 -->
+	<select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from country
+		where Id = #{id,jdbcType=INTEGER}
+	</select>
+
+	<!-- 通过主键删除对象 -->
+	<delete id="deleteById" parameterType="java.lang.Integer">
+		delete from country
+		where Id = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<!-- 新增对象(所有字段) -->
+	<insert id="insertAllField" parameterType="com.feiniu.mybatis.model.Country">
+		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID() AS Id
+		</selectKey>
+
+		insert into country(
+			<include refid="Base_Column_List" />
+		)
+		values(
+			#{id,jdbcType=INTEGER},
+			#{countryname,jdbcType=VARCHAR},
+			#{countrycode,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<!-- 新增对象(部分字段) -->
+	<insert id="insert" parameterType="com.feiniu.mybatis.model.Country">
+		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID() AS Id
+		</selectKey>
+
+		insert into country
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">Id,</if>
+			<if test="countryname != null">countryname,</if>
+			<if test="countrycode != null">countrycode,</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">Id,</if>
+			<if test="countryname != null">#{countryname,jdbcType=VARCHAR},</if>
+			<if test="countrycode != null">#{countrycode,jdbcType=VARCHAR},</if>
+		</trim>
+	</insert>
+
+	<!-- 修改对象 (部分字段)-->
+	<update id="update" parameterType="com.feiniu.mybatis.model.Country">
+		update country
+		<set>
+			<if test="countryname != null">countryname = #{countryname,jdbcType=VARCHAR},</if>
+			<if test="countrycode != null">countrycode = #{countrycode,jdbcType=VARCHAR},</if>
+		</set>
+		where Id = #{id,jdbcType=INTEGER}
+	</update>
+
+	<!-- 修改对象(所有字段) -->
+	<update id="updateAllField" parameterType="com.feiniu.mybatis.model.Country">
+		update country
+		set
+			countryname = #{countryname,jdbcType=VARCHAR},
+			countrycode = #{countrycode,jdbcType=VARCHAR}
+		where Id = #{id,jdbcType=INTEGER}
+	</update>
+
+	<!-- 批量插入(所有字段) -->
+	<insert id="batchInsert" parameterType="java.util.List">
+		insert into country(
+			<include refid="Base_Column_List" />
+		)
+		values
+		<foreach collection="list" index="index" item="item" separator=",">
+		(
+			#{item.id}
+			<choose><when test="item.countryname != null">,#{item.countryname}</when><otherwise>,default</otherwise></choose>
+			<choose><when test="item.countrycode != null">,#{item.countrycode}</when><otherwise>,default</otherwise></choose>
+		)
+		</foreach>
+	</insert>
+
+	<!-- 批量插入或更新(所有字段) -->
+	<update id="batchInsertOrUpdate" parameterType="java.util.List">
+		insert into country(
+			<include refid="Base_Column_List" />
+		)
+		values
+		<foreach collection="list" index="index" item="item" separator=",">
+		(
+			#{item.id}
+			<choose><when test="item.countryname != null">,#{item.countryname}</when><otherwise>,default</otherwise></choose>
+			<choose><when test="item.countrycode != null">,#{item.countrycode}</when><otherwise>,default</otherwise></choose>
+		)
+		</foreach>
+		on duplicate key update countryname = values(countryname), countrycode = values(countrycode)
+	</update>
+
+	<!-- 批量删除 -->
+	<delete id="batchDelete" parameterType="java.util.List">
+		delete from country where Id in 
+		<foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+
+	<!-- 自定义 -->
+</mapper>
