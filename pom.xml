@@ -116,6 +116,7 @@
 	</dependencyManagement>
 
 	<modules>
+		<module>spring-boot-config</module>
 		<module>spring-boot-dubbo-api</module>
 		<module>spring-boot-dubbo-service</module>
 		<module>spring-boot-dubbo-custom</module>
