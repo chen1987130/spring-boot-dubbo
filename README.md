@@ -1,14 +1,10 @@
 1.安装zookeeper,端口：2181
 2.安装rabbitmq,端口：5672,用户名：guest,密码：guest
 3.启动zookeeper
-cd D:\work\zookeeper-3.4.8\bin
-d:
-zkServer.cmd
-4.启动Redis
 cd D:\work\Redis-x64-3.0.504
 d:
 redis-server.exe
-5.启动rabbitmq
+4.启动rabbitmq
 cd D:\work\RabbitMQ\rabbitmq_server-3.6.12\sbin
 d:
 rabbitmq-server
@@ -35,7 +31,7 @@ http://10.211.240.120:9085/spring-boot-dubbo-app/hello/properties
 #查看动态配置
 http://10.211.240.120:9080/spring-boot-dubbo-app/dev
 {spring-boot-dubbo-app} 项目
-{dev} 环境 
+{dev} 环境
 
 #查看路由情况
 http://10.211.240.120:9085/routes
