@@ -1,9 +1,9 @@
 1.安装zookeeper,端口：2181
 2.安装rabbitmq,端口：5672,用户名：guest,密码：guest
 3.启动zookeeper
-cd D:\work\Redis-x64-3.0.504
+cd D:\work\zookeeper-3.4.8\bin
 d:
-redis-server.exe
+zkServer.cmd
 4.启动rabbitmq
 cd D:\work\RabbitMQ\rabbitmq_server-3.6.12\sbin
 d:
@@ -43,4 +43,22 @@ http://10.211.240.120:9085/health
 http://10.211.240.120:9085/hystrix.stream
 
 
+其他项目
+1.spring-boot-data
+集成kafka、mongo、Redis,并提供简单的数据读取方式
+2.spring-boot-data-rest
+Restful 风格访问数据库
+3.spring-boot-framework
+基础工具
+4.spring-boot 
+集成 mybatis，依赖spring-boot-framework
+数据库脚本见resources/sql_data.sql
+5.spring-boot-oauth
+安全验证
+6.spring-boot-quartz
+集成quartz，前台界面未开发完
+7.spring-boot-session
+通过Redis服务器，实现多服务器session同步
+8.spring-boot-solr
+集成solr
 
