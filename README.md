@@ -55,7 +55,7 @@ Restful 风格访问数据库 </br>
 4.spring-boot </br>
 集成 mybatis，依赖spring-boot-framework </br>
 数据库脚本见resources/sql_data.sql </br>
-<a href="https://github.com/chen1987130/generate-code">mybatis配置生产器</a>
+<a href="https://github.com/chen1987130/generate-code">mybatis配置生产器</a> </br>
 5.spring-boot-oauth </br>
 安全验证 </br>
 6.spring-boot-quartz </br>
