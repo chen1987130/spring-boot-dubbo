@@ -48,20 +48,35 @@ http://localhost:9085/hystrix.stream </br>
 其他项目 </br>
 1.spring-boot-data </br>
 集成kafka、mongo、Redis,并提供简单的数据读取方式 </br>
+</br>
 2.spring-boot-data-rest </br>
 Restful 风格访问数据库 </br>
+<a href="https://github.com/chen1987130/spring-boot-dubbo/blob/master/spring-boot-mybatis/src/main/resources/sql_data.sql">数据库脚本见</a>
+</br>
 3.spring-boot-framework </br>
 基础工具 </br>
+</br>
 4.spring-boot </br>
 集成 mybatis，依赖spring-boot-framework </br>
 数据库脚本见resources/sql_data.sql </br>
 <a href="https://github.com/chen1987130/generate-code">mybatis配置生产器</a> </br>
+</br>
 5.spring-boot-oauth </br>
 安全验证 </br>
+</br>
 6.spring-boot-quartz </br>
 集成quartz，前台界面未开发完 </br>
+数据库脚本
+<a href="https://github.com/chen1987130/spring-boot-dubbo/blob/master/spring-boot-quartz/doc/quartz_mysql.sql">见quartz_mysql.sql</a>
+---测试地址---
+新增定时任务
+http://localhost:8089/cronTask/addOrUpdate?type=Add&code=100&taskName=helloTask&clazz=com.feiniu.quartz.task.HelloTask
+新增定时计划
+http://localhost:8089/simplePlan/addOrUpdate?type=Add&planName=helloPlan&jobCode=100&repeatCount=-1&interval=5
+</br>
 7.spring-boot-session </br>
 通过Redis服务器，实现多服务器session同步 </br>
+</br>
 8.spring-boot-solr </br>
 集成solr </br>
-
+</br>
