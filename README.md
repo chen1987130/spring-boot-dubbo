@@ -68,11 +68,11 @@ Restful 风格访问数据库 </br>
 集成quartz，前台界面未开发完 </br>
 数据库脚本
 <a href="https://github.com/chen1987130/spring-boot-dubbo/blob/master/spring-boot-quartz/doc/quartz_mysql.sql">见quartz_mysql.sql</a>
----测试地址---
-新增定时任务
-http://localhost:8089/cronTask/addOrUpdate?type=Add&code=100&taskName=helloTask&clazz=com.feiniu.quartz.task.HelloTask
-新增定时计划
-http://localhost:8089/simplePlan/addOrUpdate?type=Add&planName=helloPlan&jobCode=100&repeatCount=-1&interval=5
+---测试地址--- </br>
+新增定时任务 </br>
+http://localhost:8089/cronTask/addOrUpdate?type=Add&code=100&taskName=helloTask&clazz=com.feiniu.quartz.task.HelloTask </br>
+新增定时计划 </br>
+http://localhost:8089/simplePlan/addOrUpdate?type=Add&planName=helloPlan&jobCode=100&repeatCount=-1&interval=5 </br>
 </br>
 7.spring-boot-session </br>
 通过Redis服务器，实现多服务器session同步 </br>
