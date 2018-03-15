@@ -22,6 +22,7 @@ import com.feiniu.mybatis.model.City;
 import com.feiniu.mybatis.model.Country;
 import com.feiniu.mybatis.model.Employee;
 import com.feiniu.mybatis.model.PageTable;
+import com.feiniu.mybatis.service.CountryService;
 import com.feiniu.mybatis.service.EmployeeService;
 
 @RestController
@@ -36,6 +37,9 @@ public class SqlController {
 
 	@Autowired
 	private EmployeeService employeeService;
+
+	@Autowired
+	private CountryService countryService;
 
 	@RequestMapping("/list")
 	public List<City> list() {
@@ -92,6 +96,12 @@ public class SqlController {
 	@RequestMapping("/listEmployee")
 	public PageTable listEmployee(@RequestParam Integer page, @RequestParam Integer pageSize) throws Exception {
 		return employeeService.queryListOrderByAge(page, pageSize);
+	}
+
+	@RequestMapping("/employeeTx")
+	public String employeeTx() throws Exception {
+		countryService.batchOpt();
+		return "success";
 	}
 
 	public static void main(String[] args) throws IOException {

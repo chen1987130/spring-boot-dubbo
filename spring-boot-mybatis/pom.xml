@@ -24,6 +24,11 @@
 			<groupId>com.feiniu</groupId>
 			<artifactId>spring-boot-framework</artifactId>
 		</dependency>
+		<!-- spring-aop(事务) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
 		<!-- 支持mongodb -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
