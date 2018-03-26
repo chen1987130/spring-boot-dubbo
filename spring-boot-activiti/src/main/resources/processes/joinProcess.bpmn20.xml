@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef">
+  <process id="joinProcess" isExecutable="true">
+    <startEvent id="startEvent" name="Start"></startEvent>
+    <userTask id="leaveTask" name="申请" activiti:candidateUsers="${personName}"></userTask>
+    <sequenceFlow id="toTask" sourceRef="startEvent" targetRef="leaveTask"></sequenceFlow>
+    <endEvent id="endEvent" name="End"></endEvent>
+    <serviceTask id="serviceTask" name="加入" activiti:expression="${joinService.joinGroup(execution)}"></serviceTask>
+    <sequenceFlow id="toService" sourceRef="leaveTask" targetRef="serviceTask"></sequenceFlow>
+    <sequenceFlow id="toEnd" sourceRef="serviceTask" targetRef="endEvent"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_joinProcess">
+    <bpmndi:BPMNPlane bpmnElement="joinProcess" id="BPMNPlane_joinProcess">
+      <bpmndi:BPMNShape bpmnElement="startEvent" id="BPMNShape_startEvent">
+        <omgdc:Bounds height="35.0" width="35.0" x="210.0" y="190.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="leaveTask" id="BPMNShape_leaveTask">
+        <omgdc:Bounds height="55.0" width="105.0" x="310.0" y="180.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endEvent" id="BPMNShape_endEvent">
+        <omgdc:Bounds height="35.0" width="35.0" x="710.0" y="190.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="serviceTask" id="BPMNShape_serviceTask">
+        <omgdc:Bounds height="55.0" width="105.0" x="515.0" y="180.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="toTask" id="BPMNEdge_toTask">
+        <omgdi:waypoint x="245.0" y="207.0"></omgdi:waypoint>
+        <omgdi:waypoint x="310.0" y="207.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="toService" id="BPMNEdge_toService">
+        <omgdi:waypoint x="415.0" y="207.0"></omgdi:waypoint>
+        <omgdi:waypoint x="515.0" y="207.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="toEnd" id="BPMNEdge_toEnd">
+        <omgdi:waypoint x="620.0" y="207.0"></omgdi:waypoint>
+        <omgdi:waypoint x="710.0" y="207.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
