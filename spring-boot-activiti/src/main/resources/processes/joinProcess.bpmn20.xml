@@ -5,9 +5,23 @@
     <userTask id="leaveTask" name="申请" activiti:candidateUsers="${personName}"></userTask>
     <sequenceFlow id="toTask" sourceRef="startEvent" targetRef="leaveTask"></sequenceFlow>
     <endEvent id="endEvent" name="End"></endEvent>
-    <serviceTask id="serviceTask" name="加入" activiti:expression="${joinService.joinGroup(execution)}"></serviceTask>
-    <sequenceFlow id="toService" sourceRef="leaveTask" targetRef="serviceTask"></sequenceFlow>
-    <sequenceFlow id="toEnd" sourceRef="serviceTask" targetRef="endEvent"></sequenceFlow>
+    <serviceTask id="joinTask" name="加入" activiti:expression="${joinService.joinGroup(execution)}"></serviceTask>
+    <sequenceFlow id="toService" sourceRef="leaveTask" targetRef="joinTask"></sequenceFlow>
+    <sequenceFlow id="toMail" sourceRef="joinTask" targetRef="mailTask"></sequenceFlow>
+    <serviceTask id="mailTask" name="发送邮件" activiti:type="mail">
+      <extensionElements>
+        <activiti:field name="to">
+          <activiti:string><![CDATA[251382101@qq.com]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="subject">
+          <activiti:string><![CDATA[欢迎]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="text">
+          <activiti:expression><![CDATA[欢迎${personName}加入组织]]></activiti:expression>
+        </activiti:field>
+      </extensionElements>
+    </serviceTask>
+    <sequenceFlow id="toEnd" sourceRef="mailTask" targetRef="endEvent"></sequenceFlow>
   </process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_joinProcess">
     <bpmndi:BPMNPlane bpmnElement="joinProcess" id="BPMNPlane_joinProcess">
@@ -18,10 +32,13 @@
         <omgdc:Bounds height="55.0" width="105.0" x="310.0" y="180.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="endEvent" id="BPMNShape_endEvent">
-        <omgdc:Bounds height="35.0" width="35.0" x="710.0" y="190.0"></omgdc:Bounds>
+        <omgdc:Bounds height="35.0" width="35.0" x="800.0" y="190.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape bpmnElement="serviceTask" id="BPMNShape_serviceTask">
-        <omgdc:Bounds height="55.0" width="105.0" x="515.0" y="180.0"></omgdc:Bounds>
+      <bpmndi:BPMNShape bpmnElement="joinTask" id="BPMNShape_joinTask">
+        <omgdc:Bounds height="55.0" width="105.0" x="480.0" y="180.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="mailTask" id="BPMNShape_mailTask">
+        <omgdc:Bounds height="55.0" width="105.0" x="650.0" y="180.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge bpmnElement="toTask" id="BPMNEdge_toTask">
         <omgdi:waypoint x="245.0" y="207.0"></omgdi:waypoint>
@@ -29,11 +46,15 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="toService" id="BPMNEdge_toService">
         <omgdi:waypoint x="415.0" y="207.0"></omgdi:waypoint>
-        <omgdi:waypoint x="515.0" y="207.0"></omgdi:waypoint>
+        <omgdi:waypoint x="480.0" y="207.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="toMail" id="BPMNEdge_toMail">
+        <omgdi:waypoint x="585.0" y="207.0"></omgdi:waypoint>
+        <omgdi:waypoint x="650.0" y="207.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="toEnd" id="BPMNEdge_toEnd">
-        <omgdi:waypoint x="620.0" y="207.0"></omgdi:waypoint>
-        <omgdi:waypoint x="710.0" y="207.0"></omgdi:waypoint>
+        <omgdi:waypoint x="755.0" y="207.0"></omgdi:waypoint>
+        <omgdi:waypoint x="800.0" y="207.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
