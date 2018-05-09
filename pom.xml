@@ -18,7 +18,7 @@
 		<framework-version>1.0.0</framework-version>
 		<commons-lang-version>2.4</commons-lang-version>
 		<fastjson-version>1.1.41</fastjson-version>
-		<activiti.version>5.22.0</activiti.version>
+		<activiti.version>5.22.0</activiti.version> 
 	</properties>
 
 	<!-- spring-boot -->
