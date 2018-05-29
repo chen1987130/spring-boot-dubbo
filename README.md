@@ -51,7 +51,7 @@ http://localhost:9085/hystrix.stream </br>
 </br>
 2.spring-boot-data-rest </br>
 Restful 风格访问数据库 </br>
-<a href="https://github.com/chen1987130/spring-boot-dubbo/blob/master/spring-boot-mybatis/src/main/resources/sql_data.sql">数据库脚本见</a>
+<a href="https://github.com/chen1987130/spring-boot-dubbo/blob/master/spring-boot-mybatis/src/main/resources/sql_data.sql">数据库脚本见</a></br>
 </br>
 3.spring-boot-framework </br>
 基础工具 </br>
