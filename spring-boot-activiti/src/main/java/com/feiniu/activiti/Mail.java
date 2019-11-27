@@ -12,11 +12,11 @@ public class Mail {
 			email.setStartTLSEnabled(false);
 			email.setSSLOnConnect(false);
 			// 收件人的邮箱
-			email.addTo("chensheng@dtinsure.com", "chensheng");
+			email.addTo("xxx@qq.com", "chensheng");
 			// 发送人的邮箱
-			email.setFrom("chensheng@dtinsure.com", "鸡博士");
+			email.setFrom("xxx@qq.com", "陈晟");
 			// 邮件认证
-			email.setAuthentication("chensheng@dtinsure.com", "123456.com");
+			email.setAuthentication("xxx@qq.com", "");
 			email.setSubject("Test message");
 			email.setMsg("This is a simple test of commons-email..");
 			email.send();
