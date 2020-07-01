@@ -16,7 +16,7 @@
 		<spring-druid-version>1.1.0</spring-druid-version>
 		<dubbo-version>2.5.3</dubbo-version>
 		<zkclient-version>0.7</zkclient-version>
-		<quartz-version>2.2.1</quartz-version>
+		<quartz-version>2.3.2</quartz-version>
 		<framework-version>1.0.0</framework-version>
 		<commons-lang-version>2.4</commons-lang-version>
 		<fastjson-version>1.1.41</fastjson-version>
